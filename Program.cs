@@ -10,6 +10,7 @@ namespace sensors
     {
         static void Main(string[] args)
         {
+            Game.StartGame();
         }
     }
 }
