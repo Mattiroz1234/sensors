@@ -10,11 +10,8 @@ namespace sensors
     {
         public override string Type => "thermal";
 
-        public override bool IsBroken => false;
-
         public override bool Activate()
         {
-            ActivationCount++;
             return true;
         }
     }

@@ -10,12 +10,15 @@ namespace sensors
     {
         protected List<string> weaknesses = new List<string>();
         protected List<Sensor> attachedSensors = new List<Sensor>();
+        protected List<Sensor> matchedSensors = new List<Sensor>();
 
 
         public abstract string Rank { get; }
 
-        public IranianAgent(int numberOfSensors, List<string> availableTypes)
+        public IranianAgent(int numberOfSensors)
         {
+            List<string> availableTypes = SensorFactory.GetAvailableSensorTypes();
+
             var rnd = new Random();
             for (int i = 0; i < numberOfSensors; i++)
             {
@@ -24,33 +27,33 @@ namespace sensors
             }
         }
 
-        public virtual void AttachSensor(Sensor sensor)
+        public void AttachSensor(Sensor sensor)
         {
             attachedSensors.Add(sensor);
         }
 
         public int CheckMatch()
         {
-            var temp = new List<string>(weaknesses);
-            int matchCount = 0;
+            matchedSensors = new List<Sensor>(); 
 
-            foreach (var sensor in attachedSensors)
+            foreach (Sensor sensor in attachedSensors)
             {
-                if (temp.Contains(sensor.Type))
-                {
-                    matchCount++;
-                    temp.Remove(sensor.Type); 
-                }
+                if (!sensor.Activate())
+                    continue;
+
+                if (weaknesses.Contains(sensor.Type))
+                    matchedSensors.Add(sensor);
             }
-            return matchCount;
+
+            return matchedSensors.Count;
         }
+
 
         public int WeaknessCount => weaknesses.Count;
 
+        public bool IsExposed() => matchedSensors.Count >= WeaknessCount;
 
-        public bool IsExposed() => CheckMatch() == weaknesses.Count;
 
-        //public virtual void OnTurnPassed(int turnNumber) { }
     }
 
 }

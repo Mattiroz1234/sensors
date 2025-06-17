@@ -19,7 +19,7 @@ namespace sensors
 
             while (!agent.IsExposed())
             {
-                Console.WriteLine("\nAvailable sensors: " + string.Join(", ", availableSensors));
+                Console.WriteLine("Available sensors: " + string.Join(", ", availableSensors));
                 Console.Write("Enter sensor type: ");
                 string input = Console.ReadLine().ToLower();
 
@@ -27,12 +27,6 @@ namespace sensors
                 if (sensor == null)
                 {
                     Console.WriteLine("Invalid sensor type.");
-                    continue;
-                }
-
-                if (!sensor.Activate())
-                {
-                    Console.WriteLine("Sensor failed to activate.");
                     continue;
                 }
 

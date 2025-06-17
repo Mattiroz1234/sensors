@@ -10,8 +10,7 @@ namespace sensors
     {
         public override string Rank => "Foot Soldier";
 
-        public FootSoldier()
-            : base(2, new List<string> { "audio", "thermal"})
+        public FootSoldier() : base(2)
         {
         }
     }

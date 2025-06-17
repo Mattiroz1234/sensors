@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using sensors.sensors;
 
 namespace sensors
 {
@@ -14,8 +15,13 @@ namespace sensors
             {
                 case "audio":
                     return new AudioSensor();
+
                 case "thermal":
                     return new ThermalSensor();
+
+                case "pulse":
+                    return new PulseSensor();
+
                 default:
                     Console.WriteLine($"Unknown sensor type: {type}. Please try again.");
                     return null;
@@ -25,7 +31,7 @@ namespace sensors
 
         public static List<string> GetAvailableSensorTypes()
         {
-            return new List<string> { "audio", "thermal"};
+            return new List<string> { "audio", "thermal", "pulse" };
         }
     }
 }
