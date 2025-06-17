@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace sensors
-{
-    internal class AudioSensor : Sensor
+{internal class AudioSensor : Sensor
     {
-        public override string Type => "Audio";
+        public override string Type => "audio";
 
         public override bool IsBroken => false;
 
@@ -17,6 +16,7 @@ namespace sensors
             ActivationCount++;
             return true;
         }
+    
     }
 
 }

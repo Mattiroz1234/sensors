@@ -22,5 +22,10 @@ namespace sensors
 
             }
         }
+
+        public static List<string> GetAvailableSensorTypes()
+        {
+            return new List<string> { "audio", "thermal"};
+        }
     }
 }
