@@ -44,17 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="agents\SquadLeader.cs" />
-    <Compile Include="main\SeniorCommander.cs" />
+    <Compile Include="agents\SeniorCommander.cs" />
     <Compile Include="sensors\AudioSensor.cs" />
     <Compile Include="agents\FootSoldier.cs" />
     <Compile Include="main\Game.cs" />
-    <Compile Include="agents\IranianAgent .cs" />
+    <Compile Include="models\IranianAgent .cs" />
     <Compile Include="main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sensors\IBreakableSensor.cs" />
+    <Compile Include="models\IBreakableSensor.cs" />
     <Compile Include="sensors\PulseSensor.cs" />
-    <Compile Include="sensors\sensor.cs" />
-    <Compile Include="main\SensorFactory.cs" />
+    <Compile Include="models\sensor.cs" />
+    <Compile Include="servis\SensorFactory.cs" />
     <Compile Include="sensors\ThermalSensor.cs" />
   </ItemGroup>
   <ItemGroup>
