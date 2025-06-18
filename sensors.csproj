@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agents\OrganizationLeader.cs" />
     <Compile Include="agents\SquadLeader.cs" />
     <Compile Include="agents\SeniorCommander.cs" />
     <Compile Include="sensors\AudioSensor.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="models\IBreakableSensor.cs" />
     <Compile Include="sensors\PulseSensor.cs" />
     <Compile Include="models\sensor.cs" />
+    <Compile Include="servis\AgentServis.cs" />
     <Compile Include="servis\SensorFactory.cs" />
     <Compile Include="sensors\ThermalSensor.cs" />
   </ItemGroup>
