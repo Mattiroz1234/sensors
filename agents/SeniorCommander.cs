@@ -16,8 +16,9 @@ namespace sensors.main
         {
             if (matchedSensors.Count < 2)
             {
+                int temp = matchedSensors.Count;
                 attachedSensors.Clear();
-                return matchedSensors.Count;
+                return temp;
             }
             else
             {
