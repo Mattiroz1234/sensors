@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agents\SquadLeader.cs" />
+    <Compile Include="main\SeniorCommander.cs" />
     <Compile Include="sensors\AudioSensor.cs" />
     <Compile Include="agents\FootSoldier.cs" />
     <Compile Include="main\Game.cs" />

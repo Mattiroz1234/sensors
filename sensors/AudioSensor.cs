@@ -9,6 +9,8 @@ namespace sensors
     {
         public override string Type => "audio";
 
+        public override bool IsBroken => false;
+
         public override bool Activate()
         {
             return true;

@@ -24,6 +24,7 @@ namespace sensors
             {
                 string randomType = availableTypes[rnd.Next(availableTypes.Count)];
                 weaknesses.Add(randomType);
+                Console.WriteLine(randomType);
             }
         }
 
@@ -34,25 +35,27 @@ namespace sensors
 
         public int CheckMatch()
         {
-            matchedSensors = new List<Sensor>(); 
+            matchedSensors = new List<Sensor>();
+            var remainingWeaknesses = new List<string>(weaknesses);
 
             foreach (Sensor sensor in attachedSensors)
             {
                 if (!sensor.Activate())
                     continue;
 
-                if (weaknesses.Contains(sensor.Type))
+                if (remainingWeaknesses.Contains(sensor.Type))
                     matchedSensors.Add(sensor);
+                    remainingWeaknesses.Remove(sensor.Type);
             }
 
             return matchedSensors.Count;
         }
 
+        public abstract int Counterattack();
 
         public int WeaknessCount => weaknesses.Count;
 
         public bool IsExposed() => matchedSensors.Count >= WeaknessCount;
-
 
     }
 

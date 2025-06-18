@@ -10,6 +10,8 @@ namespace sensors
     {
         public abstract string Type { get; }
 
+        public abstract bool IsBroken { get; }
+
         public abstract bool Activate();
 
         

@@ -13,12 +13,13 @@ namespace sensors.sensors
 
         public override string Type => "pulse";
 
-        public bool IsBroken => ActivationCount >= MaxUsages;
+        public override bool IsBroken => ActivationCount >= MaxUsages;
 
         public override bool Activate()
         {
             if (IsBroken)
             {
+                Console.WriteLine("Pulse Sensor is broken");
                 return false;
             }
             else

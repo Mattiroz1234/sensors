@@ -9,7 +9,7 @@ namespace sensors.sensors
     internal interface IBreakableSensor
     {
         int MaxUsages { get; }
-        bool IsBroken { get; }
+        
         int ActivationCount { get; }
     }
 }
