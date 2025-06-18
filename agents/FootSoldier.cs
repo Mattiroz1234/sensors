@@ -10,9 +10,12 @@ namespace sensors
     {
         public override string Rank => "Foot Soldier";
 
-        public FootSoldier()
-            : base(2, new List<string> { "audio", "thermal"})
+        public FootSoldier() : base(2) { }
+
+        public override int Counterattack()
         {
+            Console.WriteLine("Foot Soldier Can't attack back.");
+            return 0;
         }
     }
 }

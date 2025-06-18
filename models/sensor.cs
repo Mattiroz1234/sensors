@@ -10,11 +10,13 @@ namespace sensors
     {
         public abstract string Type { get; }
 
-        public abstract bool Activate();
-
         public abstract bool IsBroken { get; }
 
-        public int ActivationCount { get; set; } = 0;
+        public abstract bool Activate();
+
+        
+
+        
     }
 
 }
